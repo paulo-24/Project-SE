@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background: #eee063;
+}
+.side_bar{
+  position: relative;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: #000000;
+  padding: 12px;
+  box-shadow: 0 -5px 20px #000000, 3px 3px 5px #ffffff, inset -3px -3px 7px #c9c9c9, inset 3px 3px 5px #ceced1;               
+}
+
+.side_bar .title .logo{
+  font-size: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Marcellus SC', serif;
+  padding-top: 10px;
+}
+.side_bar ul{
+  margin-top: 10px; 
+}
+.side_bar ul a{
+  color: #e7d28a;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  padding : 45px 25px;
+  border-radius: 100px;
+  box-shadow: -3px -3px 7px #ffffff,
+             3px 3px 5px #ceced1;
+  position: relative;
+ 
+}
+.side_bar ul i{
+  margin-right: 40px;
+}
+.media_icons{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.side_bar ul a:hover:before,
+.media_icons a:hover:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -3px -3px 7px #ffffff,
+              inset 3px 3px 5px #ceced1;
+}
+.side_bar ul a:hover:before{
+  border-radius: 100px;
+}
+.media_icons a:hover:before{
+  border-radius: 100%;
+}
+.side_bar ul a:hover{
+  color: #ffffff;
+}
+
+.button {
+    display: flex;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: end;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
