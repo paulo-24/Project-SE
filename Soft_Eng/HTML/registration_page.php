@@ -30,7 +30,6 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="css/registrationpage.css">
 </head>
-
 <body>
     <div class="container">
         <form action="registration_page.php" method="post" >
@@ -43,8 +42,7 @@
                 <div class="input-box">
                     <input type="email" placeholder="Email" name="email" required>
                     <input type="password" placeholder="Password" name="password" required>
-                    <input type="password" placeholder="Re-enter Password" name="confirm_password" required>
-                    
+                    <input type="password" placeholder="Re-enter Password" name="confirm_password" required> 
                 </div>
                 <span class="gender-title">Gender</span>
                 <div class="gender-category">
@@ -64,5 +62,4 @@
         <p>Already have an account? <a href="login_page.php"><span>Log in here</span></a></p>
     </div>
 </body>
-
 </html>

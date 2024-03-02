@@ -4,7 +4,6 @@ include("php/database.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     $admin_id = $_GET['id'];
 
-    // Fetch the admin user data from the database based on the ID
     $query = "SELECT * FROM admin WHERE id = ?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "i", $admin_id);
@@ -14,14 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     if ($result && mysqli_num_rows($result) > 0) {
         $admin = mysqli_fetch_assoc($result);
 
-        // Now you can display the admin data in a form for editing
-        // For example, you can pre-fill input fields with the admin data
         $fullname = $admin['fname'];
         $username = $admin['username'];
         $email = $admin['email'];
         $gender = $admin['gender'];
 
-        // Your HTML form for editing admin data
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -41,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" value="<?php echo $email; ?>"><br><br>
                 
-                <label for="password">New Password:</label> <!-- Include password field -->
+                <label for="password">New Password:</label> 
                 <input type="password" id="password" name="password"><br><br>
                 
                 <label for="gender">Gender:</label>
@@ -51,13 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         </body>
         </html>
         <?php
-    } else {
-        // Admin not found, handle the error or redirect back to admin list
+    } else { 
         header("Location: admin_user.php");
         exit;
     }
 } else {
-    // Invalid request, redirect back to admin list
     header("Location: admin_user.php");
     exit;
 }

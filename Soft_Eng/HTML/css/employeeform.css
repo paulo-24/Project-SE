@@ -91,6 +91,10 @@ select {
     justify-content: space-between;
     margin-top: 30px;
 }
+.btn-active{
+    background-color: rgb(255, 145, 0);
+    width: 260px;
+  }
 
 .button {
     font-size: 10px;

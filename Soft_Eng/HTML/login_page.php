@@ -1,15 +1,11 @@
 <?php
   session_start();
-  // Include database connection file
   include("php/database.php");
 
-  // Check if form is submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // Retrieve form data
       $username = $_POST['username'];
       $password = $_POST['password'];
 
-      // Query the database to check if the user exists and the password is correct
       $query = "SELECT * FROM admin WHERE username = ?";
       $stmt = mysqli_prepare($connection, $query);
       mysqli_stmt_bind_param($stmt, "s", $username);
@@ -19,21 +15,17 @@
       if ($result && mysqli_num_rows($result) > 0) {
           $user = mysqli_fetch_assoc($result);
           if (password_verify($password, $user['password'])) {
-              // Password is correct, set session variables and redirect to dashboard
               $_SESSION['username'] = $username;
               header("Location: dashboard.html");
               exit;
           } else {
-              // Password is incorrect
               $error = "Invalid password";
           }
       } else {
-          // User not found
           $error = "User not found";
       }
   }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,27 +38,22 @@
     />
     <link rel="stylesheet" href="css/signinpage.css"/>
   </head>
-
   <body>
     <div class="wrapper">
         <form action="login_page.php" method="post">
           <h1>Login Panel</h1>
           <h3>Enter username & password</h3>
-
           <?php if (isset($error)) { ?>
             <div class="error"><?php echo $error; ?></div>
           <?php } ?>
-
           <div class="input-box">
             <input type="text" name="username" placeholder="Username" required />
             <i class="bx bxs-user"></i>
           </div>
-
           <div class="input-box">
             <input type="password" name="password" placeholder="Password" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
-
           <div class="remember-box">
             <label><input type="checkbox" />Remember me</label>
           </div>

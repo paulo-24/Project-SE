@@ -7,47 +7,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/employeeform.css">
     <link rel="stylesheet" href="css/topsidenavbars.css">
-    
 </head>
-
 <body>
-     
-<!--Header html here -->  
     <header class="header">
-
       <nav class="topnav">
-          <a class="active" href="index.html">Logout</a>
+          <a class="active" href="index.php">Logout</a>
           <a href="#about">About</a>
           <a href=" ">Contact</a>
-          <a class="logout-btn" href="index.html">Home</a>
-      </nav>
-        
-        
+          <a class="logout-btn" href="index.php">Home</a>
+      </nav>   
     </header>
-    
-<!--Sidebar html here -->   
     <section class="sidebar">
               <div class="logo-sidebar">ADMIN</div>
                 <ul>
                   <li><a href="dashboard.html"><i class="fas fa-box"></i>Dashboard</a></li>
-                  <li><a href="employeeform.html"><i class="fas fa-paperclip"></i>Employee Form</a></li>
-                  <li><a href="attendance.html"><i class="fas fa-check"></i>Attendance</a></li>
-                  <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li>
+                  <li><a href="employeeform.html" class="btn-active"><i class="fas fa-paperclip"></i>Employee Form</a></li>
+                  <li><a href="attendance.php"><i class="fas fa-check"></i>Attendance</a></li>
+                  <!-- <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li> -->
                   <li><a href="positionlist.php"><i class="fas fa-user-tie"></i>Position List</a></li>
                   <li><a href="allowancelist.html"><i class="fas fa-credit-card"></i>Allowance List</a></li>
                   <li><a href="deductionlist.html"><i class="fas fa-equals"></i>Deduction List</a></li>
                   <li><a href="admin_user.php"><i class="fas fa-user"></i>Admin Users</a></li> 
               </ul>
         </div>
-    </section>
-    
-<!--main body html here-->    
+    </section>       
 <main class="main">  
   <div class="card-body">
-      <div class="logo-main">Attendance</div>
+      <div class="logo-main">EMPLOYEE FORM</div>
       <div class="form-content">
         <form class="form" action="save_employee.php" method="post" onreset="resetForm()">
-            <div class="form-head">Employee Payroll form</div>
+            <div class="form-head">Employee Form</div>
             <div class="row-content">
               <label class="label text" for="name">Name:</label>
               <input
@@ -59,7 +48,6 @@
                 required
               />
             </div>
-
             <div class="row-content">
               <label class="label text" for="employee_id">ID:</label>
               <input
@@ -71,7 +59,6 @@
                 required
               />
             </div>
-
             <div class="row-content">
               <label class="label text" for="email">Email:</label>
               <input
@@ -83,7 +70,6 @@
                 required
               />
             </div>
-            
             <div class="row-content">
               <label class="label text" for="gender">Gender:</label>
               <div>
@@ -109,8 +95,6 @@
                 </label>
               </div>
             </div>
-
-
             <div class="row-content">
               <label class="label text" for="department">Department:</label>
               <div>
@@ -131,16 +115,6 @@
                     id="cook"
                     name="department[]"
                     value="Cook"
-                  />
-                  <label class="text" for="sales">Cook</label>
-                </label>
-                <label>
-                  <input
-                    class="checkbox"
-                    type="checkbox"
-                    id="cashier"
-                    name="department[]"
-                    value="Cashier"
                   />
                   <label class="text" for="finance">Cashier</label>
                 </label>
@@ -166,7 +140,6 @@
                 </label>
                     </div>
                   </div>
-
                   <div class="row-content">
                     <label class="label text" for="salary">Choose your Salary: </label>
                     <input
@@ -178,7 +151,6 @@
                       placeholder="Enter salary amount"
                     />
                   </div>
-
                   <div class="row-content">
                     <label class="label text" for="start_date">Start Date:</label>
                     <input
@@ -189,8 +161,6 @@
                       required
                     />
                   </div>
-                  
-
                   <div class="buttonParent">
                     <div class="submit-reset">
                       <button class="button submitButton" type="submit" id="submitButton">
@@ -202,10 +172,6 @@
                 </form>
               </div>
         </div>
-        
-         
     </main>
-    
-
 </body>
 </html>

@@ -11,6 +11,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 20px 35px rgb(0, 0, 0.1);
+    
 }
 
 h1 {
@@ -21,6 +22,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    
 }
 
 th, td {
@@ -68,6 +70,10 @@ button:hover{
 button:active{
     background-color: #000000;
 }
+.btn-active{
+    background-color: rgb(255, 145, 0);
+    width: 260px;
+  }
 
 /*Modal popup here*/
 .bg-modal{

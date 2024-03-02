@@ -1,31 +1,25 @@
 <?php
-// Include database connection file
+
 include("php/database.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
     $fullname = $_POST['fullname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $gender = $_POST['gender'];
 
-    // Hash the password before storing in the database
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert new admin data into the database
     $query = "INSERT INTO admin (fname, username, email, password, gender) VALUES (?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "sssss", $fullname, $username, $email, $hashed_password, $gender);
     mysqli_stmt_execute($stmt);
 
-    // Redirect back to admin list after adding
     header("Location: admin_user.php");
     exit;
 }
 ?>
-
-<!-- Your HTML form for adding admin data -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header class="header">
         <nav class="topnav">
-            <a class="active" href="index.html">Logout</a>
+            <a class="active" href="index.php">Logout</a>
             <a href="#about">About</a>
             <a href="">Contact</a>
-            <a class="logout-btn" href="index.html">Home</a>
+            <a class="logout-btn" href="index.php">Home</a>
         </nav>
     </header>
-    
     <section class="main">
         <div class="card-body">
             <div class="logo-main">Admin Panel - Add Admin</div>
@@ -67,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </section>
-
     <script src="js/adminuser.js"></script>
 </body>
 </html>

@@ -7,33 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/adminuser.css">
     <link rel="stylesheet" href="css/topsidenavbars.css">
-   
 </head>
-
 <body>
     <header class="header">
         <nav class="topnav">
-            <a class="active" href="index.html">Logout</a>
+            <a class="active" href="index.php">Logout</a>
             <a href="#about">About</a>
             <a href="">Contact</a>
-            <a class="logout-btn" href="index.html">Home</a>
+            <a class="logout-btn" href="index.php">Home</a>
         </nav>
     </header>
-    
     <section class="sidebar">
         <div class="logo-sidebar">ADMIN</div>
         <ul>
             <li><a href="dashboard.html"><i class="fas fa-box"></i>Dashboard</a></li>
             <li><a href="employeeform.html"><i class="fas fa-paperclip"></i>Employee Form</a></li>
-            <li><a href="attendance.html"><i class="fas fa-check"></i>Attendance</a></li>
-            <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li>
+            <li><a href="attendance.php"><i class="fas fa-check"></i>Attendance</a></li>
+            <!-- <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li> -->
             <li><a href="positionlist.php"><i class="fas fa-user-tie"></i>Position List</a></li>
             <li><a href="allowancelist.html"><i class="fas fa-credit-card"></i>Allowance List</a></li>
             <li><a href="deductionlist.html"><i class="fas fa-equals"></i>Deduction List</a></li>
-            <li><a href="admin_user.php"><i class="fas fa-user"></i>Admin Users</a></li> 
+            <li><a href="admin_user.php" class="btn-active"><i class="fas fa-user"></i>Admin Users</a></li> 
         </ul>
     </section>
-    
     <main class="main">  
         <div class="card-body">
             <div class="logo-main">Admin Panel</div>
@@ -45,7 +41,6 @@
                             <th>Full Name</th>
                             <th>User Name</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>Gender</th>
                             <th class="action">Actions</th>
                         </tr>
@@ -63,7 +58,7 @@
                                 echo "<td>" . $row['fname'] . "</td>";
                                 echo "<td>" . $row['username'] . "</td>";
                                 echo "<td>" . $row['email'] . "</td>";
-                                echo "<td>" . $row['password'] . "</td>";
+                                 
                                 echo "<td>" . $row['gender'] . "</td>";
                                 echo "<td>";
                                 echo "<a href='edit_admin.php?id=" . $row['id'] . "'>Edit</a>";
@@ -82,8 +77,6 @@
             </div>
         </div>    
     </main>
-
-    <!--popup modal here-->
     <div class="bg-modal" id="modal">
     <div class="modal-content">
         <div class="close">+</div>
@@ -98,15 +91,12 @@
             <button type="submit" class="button-btn">Submit</button>
         </form>
     </div>
-</div>
-
-    
+</div>    
     <script src="js/adminuser.js"></script>
     <script>
         function openModal() {
             document.getElementById('modal').style.display = 'flex';
         }
-
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
         }

@@ -17,8 +17,7 @@ body{
     font-size: 50px;
     text-align: center;
     font-weight: 600;
-    color: #ffffff;    
-       
+    color: #ffffff;         
 }
 
 
@@ -64,7 +63,7 @@ body{
 		text-transform: uppercase;
 		font-weight: 800;
 		font-family: "Josefin Sans", sans-serif;
-		background: linear-gradient(to right,#e96868 10%, #ebe836 50%, #bace04 60%);
+		background: linear-gradient(to right,#ee5757 10%, #ebe836 50%, #b9cc11 60%);
 		background-size: auto auto;
 		background-clip: border-box;
 		background-size: 200% auto;
@@ -125,7 +124,7 @@ body{
     padding: 10px;
 }
 .card-body{
-    background-color: rgb(226, 226, 226); 
+    background-color: rgb(255, 255, 255); 
     height: 800px;
     padding-bottom: 200px;
 }
